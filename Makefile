@@ -1,13 +1,15 @@
-Driver=Driver1
-Class=DynamicArray
-Output=A11
+Driver=Assignment2Q2
 
-all: $(Driver).o $(Class).o
-	g++ $(Driver).o $(Class).o -o $(Output).out
-	./$(Output).out
+all: $(Driver).o Course.o Student.o CourseManager.o
+	g++ $(Driver).o Course.o Student.o CourseManager.o -o a.out
+	./a.out
 	rm *.out
 	rm *.o
 $(Driver).o:$(Driver).cpp
 	g++ -c $(Driver).cpp
-$(Class).o:$(Class).cpp
-	g++ -c $(Class).cpp
+Course.o:Course.cpp
+	g++ -c Course.cpp
+CourseManager.o:CourseManager.cpp
+	g++ -c CourseManager.cpp
+Student.o:Student.cpp
+	g++ -c Student.cpp
